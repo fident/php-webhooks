@@ -26,7 +26,18 @@ class WebhookParser
     $this->_verificationKey = $verificationKey;
   }
 
-  public function verifyHeaders(array $headers): bool
+  /**
+   * @param string $verificationKey
+   *
+   * @return WebhookParser
+   */
+  public function setVerificationKey(string $verificationKey)
+  {
+    $this->_verificationKey = $verificationKey;
+    return $this;
+  }
+
+  public function verifyHeaders(array $headers, $verifyKey = null): bool
   {
     //Payload Checksum
     $checksum = isset($headers['x-fident-checksum']) ? $headers['x-fident-checksum'] : '';
@@ -35,7 +46,7 @@ class WebhookParser
     $verification = isset($headers['x-fident-verification']) ? $headers['x-fident-verification'] : '';
 
     //Verify the checksum + verification key matches the verification has
-    return sha1($checksum . $this->_verificationKey) === $verification;
+    return sha1($checksum . ($verifyKey ?? $this->_verificationKey)) === $verification;
   }
 
   public function verifyWebhook(array $headers): bool
