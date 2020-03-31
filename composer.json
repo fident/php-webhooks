@@ -1,0 +1,19 @@
+{
+  "name": "fident/php-webhooks",
+  "description": "Fident webhook classes for php",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Fident\\Webhooks\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.3",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "swaggest/json-schema": "^0.12.11",
+    "packaged/helpers": "2.*"
+  }
+}
