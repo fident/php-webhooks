@@ -4,9 +4,9 @@ namespace Fident\Webhooks\Generated\V1;
 use Fident\Webhooks\WebhookFoundation;
 
 /**
- * A login link for a users account
+ * A notification indicating that the email address for an identity has been updated
  */
-class LoginLink extends WebhookFoundation
+class EmailUpdate extends WebhookFoundation
 {
   /**
    * ID for the identity of this action
@@ -30,10 +30,10 @@ class LoginLink extends WebhookFoundation
   public $useragent;
 
   /**
-   * Link for the user to click to login to their account (Single Use)
+   * The updated email address for the identity
    *
    * @var string
    */
-  public $loginLink;
+  public $emailAddress;
 
 }

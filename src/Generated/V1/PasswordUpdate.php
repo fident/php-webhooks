@@ -4,9 +4,9 @@ namespace Fident\Webhooks\Generated\V1;
 use Fident\Webhooks\WebhookFoundation;
 
 /**
- * A login link for a users account
+ * A notification indicating that the password for an identity has been updated
  */
-class LoginLink extends WebhookFoundation
+class PasswordUpdate extends WebhookFoundation
 {
   /**
    * ID for the identity of this action
@@ -28,12 +28,5 @@ class LoginLink extends WebhookFoundation
    * @var string
    */
   public $useragent;
-
-  /**
-   * Link for the user to click to login to their account (Single Use)
-   *
-   * @var string
-   */
-  public $loginLink;
 
 }

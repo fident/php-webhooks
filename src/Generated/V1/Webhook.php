@@ -15,7 +15,11 @@ class Webhook extends WebhookFoundation
   const TYPE_LOGIN_LINK = "loginLink";
   const TYPE_RESET_PASSWORD_LINK = "resetPasswordLink";
   const TYPE_VERIFY_SET_PASSWORD_LINK = "verifySetPasswordLink";
+  const TYPE_CHANGE_EMAIL_LINK = "changeEmailLink";
   const TYPE_VERIFY_ACCOUNT = "verifyAccount";
+  const TYPE_PROFILE_UPDATE = "profileUpdate";
+  const TYPE_PASSWORD_UPDATE = "passwordUpdate";
+  const TYPE_EMAIL_UPDATE = "emailUpdate";
   /**
    * Notification type
    *
