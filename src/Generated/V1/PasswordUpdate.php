@@ -23,10 +23,10 @@ class PasswordUpdate extends WebhookFoundation
   public $ipAddress;
 
   /**
-   * Useragent from where the request for this action originated
+   * User-agent from where the request for this action originated
    *
    * @var string
    */
-  public $useragent;
+  public $userAgent;
 
 }
