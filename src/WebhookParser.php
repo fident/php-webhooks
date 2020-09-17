@@ -1,7 +1,11 @@
 <?php
 namespace Fident\Webhooks;
 
+use Fident\Webhooks\Generated\V1\ChangeEmailLink;
+use Fident\Webhooks\Generated\V1\EmailUpdate;
 use Fident\Webhooks\Generated\V1\LoginLink;
+use Fident\Webhooks\Generated\V1\PasswordUpdate;
+use Fident\Webhooks\Generated\V1\ProfileUpdate;
 use Fident\Webhooks\Generated\V1\ResetPasswordLink;
 use Fident\Webhooks\Generated\V1\VerifyAccount;
 use Fident\Webhooks\Generated\V1\VerifySetPasswordLink;
@@ -72,6 +76,18 @@ class WebhookParser
         break;
       case Webhook::TYPE_VERIFY_ACCOUNT:
         $hook->data = VerifyAccount::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_CHANGE_EMAIL_LINK:
+        $hook->data = ChangeEmailLink::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_PROFILE_UPDATE:
+        $hook->data = ProfileUpdate::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_PASSWORD_UPDATE:
+        $hook->data = PasswordUpdate::fromSource($this->_decodeJson($hook->data));
+        break;
+      case Webhook::TYPE_EMAIL_UPDATE:
+        $hook->data = EmailUpdate::fromSource($this->_decodeJson($hook->data));
         break;
     }
 
